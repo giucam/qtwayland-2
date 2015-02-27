@@ -262,8 +262,10 @@ void QWaylandWindow::setVisible(bool visible)
 
 void QWaylandWindow::raise()
 {
-    if (mShellSurface)
+    if (mShellSurface) {
+        window()->show();
         mShellSurface->raise();
+    }
 }
 
 
